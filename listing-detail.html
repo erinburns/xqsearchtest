@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title> Extraqueericular &lt;Prototype&gt; &verbar; Listing detail page </title>
+        <meta name="description" content="Discover, promote, buy &amp; sell LGBT-friendly event tickets &amp; services in your area.">
+        <link rel="stylesheet" href="reset.css"> <!-- CSS reset source: http://meyerweb.com/eric/tools/css/reset/ -->
+        <link rel="stylesheet" href="global.css"> <!-- Styles for recurring site elements -->
+        
+        <!-- responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    
+    <body id="listingdeets">
+        <header>
+            <!-- hamburger menu -->
+            <label class="hamburger" for="nav-toggle"></label>
+            <input id="nav-toggle" type="checkbox" class="hidden" />
+            
+            <nav>
+				<ul>  <!-- menu items -->
+					<li class="current"> <a href="#">Home</a> </li>
+                    <li> <a href="#">How it works</a> </li>
+                    <li> <a href="#">Sign up</a> </li>
+                    <li> <a href="#">Log in</a> </li>
+                    <li> <a href="listing-detail.html">Listing Detail</a> </li>
+				</ul> 
+                <div id="logo"> <!-- put logo here --> </div> 
+                <form id="search" method="get"> 
+                  <label for="s"></label> <!-- "search" label was here -->
+                  <input type="search" id="s" name="s"/> 
+                  <input type="submit" value="Search"/> 
+                </form> 
+			</nav>
+        </header>
+        
+        <main>
+            <img src="event-img.jpg" alt="event image" class="eventimg">
+            
+            <div id="listinginfo">
+                <div id="details">
+                    <h1> The Gay Wedding Show &#58; Brighton 2017 </h1> <!-- https://www.eventbrite.com/e/the-gay-wedding-show-brighton-2017-tickets-28649067131?aff=es2 -->
+                    <h2> Sun, 1 October 2017 12:00 PM – 3:30 PM BST </h2>
+                    <p class="address"> The Grand Brighton
+                        97-99 Kings Road<br>
+                        Brighton And Hove<br>
+                        BN1 2FW<br>
+                        United Kingdom </p>
+                    <h3> by  The Gay Wedding Show </h3>
+                </div> <!-- details -->
+            
+                <div id="eventdesc">
+                    <h4> Description </h4>
+                    <p> Welcome to the UK's National, Annual and Official Gay and Lesbian Wedding Show.
+                        Celebrating 14 years of the Gay Wedding Show and helping same sex couples plan their day. Your eTicket is free and we do ask for a small donation towards a selected number of charities around the UK from &pound;2.00 at the door.
+                        We hope you enjoy, get some great ideas and WOW factors to make your day a special one </p>
+                    <div id="pay">  <!-- src is path to (server-side) script file -->
+                        <div id="quantity"> 
+                                <label>Quantity</label> 
+                                <select>
+                                   <option value = "1">1</option>
+                                   <option value = "2">2</option>
+                                   <option value = "3">3</option>
+                                   <option value = "4">4</option>
+                                </select> 
+                            </div>
+                        <form action="/your-server-side-code" method="POST">
+                          <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"  
+                            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                            data-amount="999"
+                            data-name="Stripe.com"
+                            data-description="Widget"
+                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                            data-locale="auto"
+                            data-zip-code="true">
+                          </script>
+                        </form>
+                    </div>  <!-- pay -->
+                </div><!-- eventdesc -->
+            </div> <!-- listinginfo -->
+        </main>
+        
+        <footer>
+            
+        </footer>
+    </body>
+</html>

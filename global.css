@@ -1,0 +1,439 @@
+/* Extraqueericular
+Styles for recurring elements
+*/
+
+/*
+
+STYLE NOTES
+
+TYPEFACES:
+h1- Comfortaa
+h2- Open Sans
+h3- Open Sans 
+h4- Open Sans
+h5- Comfortaa
+p- Open Sans
+nav- Comfortaa
+l1- Comfortaa
+
+
+COLOURS:
+
+dark teal - rgb(60, 163, 165);
+dusty rose - rgb(192, 87, 104);
+red - rgb(240, 60, 82);
+lav - rgb(160, 106, 119);
+ocean - rgb(18, 187, 184);
+
+
+TEXT BLOCKS
+white - rgba(255, 255, 255, 0.5);  
+gray - rgba(64, 64, 64, 0.5);
+
+
+GRADIENTS: (soruce: https://uigradients.com/)
+https://uigradients.com/#Miaka
+Background - Miaka
+    background: #FC354C; fallback for old browsers 
+    background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to right, #0ABFBC, #FC354C);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+
+*/
+/* Google fonts import */
+@import url(http://fonts.googleapis.com/css?family=Comfortaa:300,400,700%7COpen+Sans:400,400i,600,600i,700,700i,800,800i);
+
+html {
+  box-sizing: border-box;
+  height:100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    min-height: 100%;
+    background: #FC354C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-bottom: 6rem;
+    position: relative;
+    margin: 0;
+}
+
+
+/* Typography */
+h1 {
+    font-family: Comfortaa, 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 700; 
+}
+
+h2 {
+    font-family: Comfortaa, 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 1.7em;
+}
+
+p {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.3;
+}
+
+
+header {
+    width: 100%;
+    display: inline-block;
+    background-color: #404040;
+    margin: 0 0 2% 0;
+    position: relative;
+} 
+
+footer {
+    background-color: rgb(64, 64, 64);
+	clear: both;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    height: 10%;
+    width: 100%;
+    margin: 5% 0 0 0;
+    position: absolute;
+    padding: 1rem;
+} 
+
+
+/*------- NAVIGATION -----*/
+/* begin responsive hamburger menu */
+/* Adapted from http://codepen.io/matt-clayson/pen/QpPLLZ
+Thank you to http://codepen.io/matt-clayson/ 
+*/ 
+
+.hamburger {
+  height: 5%;
+  width: 15%;
+  padding: 4%;
+  float: left;
+  cursor: pointer;
+}
+
+.hamburger:before {
+  content: "";
+  display: block;
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 4px;
+}
+
+.hamburger:after {
+  content: "";
+  display: block;
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 4px;
+  margin-top: 4px;
+  box-shadow: 0px 8px 0 #f3f3f3;
+}
+
+nav {
+    background-color: #2b2b2b;
+    margin: 0;
+    max-height: 0; 
+    overflow: hidden; 
+    clear: both;
+    transition: max-height .3s cubic-bezier(0.63, 0, 0.25, 1); 
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+
+nav li {
+  display: block;
+  margin: 0;
+  text-align: center;
+}
+
+nav a {
+    color: white;
+    display: block;
+    padding: .4em;
+    font-family: Comfortaa, 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+header input[type="checkbox"]:checked ~ nav {
+  max-height: 200px;  /* adjusts the height of the expanded hamburger menu in mobile view */
+  /* border-bottom: #404040 5px solid; */
+}
+
+header a:hover,
+header a:focus,
+header label:hover,
+header label:focus {
+  background-color: #191919;
+}
+
+#search { /* applies only to header search box */
+    text-align: center;
+}
+
+/* this media query won't display hamburger menu on screens larger than 700px */
+
+@media (min-width: 700px) {
+  .hamburger {
+    display: none;
+  }
+    
+  nav {
+    background: transparent;
+    border: 0 !important; 
+    max-height: none;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    -webkit-flex-direction: row; /* Safari */
+    flex-direction:         row;
+    -webkit-flex-wrap: wrap; /* Safari */
+    flex-wrap:         wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;  /* centers items vertically */
+  }
+    
+  nav ul, nav li, nav li a {
+    display: inline-block;
+  }
+     
+  nav a {
+    display: inline-block;
+    padding: 20px 1em;
+    height: 10%;
+  }
+}
+
+.hidden {
+  position: fixed;
+  top: -100%;
+  left: -100%;
+}
+
+#search {
+    padding: 0 5% 0 0;
+}
+
+/* end responsive hamburger menu */
+/* ------ end Navigation  -------- */
+
+
+/* ------ HOME PAGE -------- */
+#homebody main {
+    width: 100%;
+}
+
+#customers {
+    background: rgb(64, 64, 64); 
+    padding: 2.5%;
+    margin: 5% 0 0 0;
+}
+
+#customers h1, #customers h2 {
+    color: rgb(255, 255, 255);
+    text-align: center; 
+}
+
+#vendors {
+    padding: 2.5%;
+    margin: 0 auto;
+}
+
+#vendors h1, #vendors h2 {
+    text-align: center; 
+}
+
+
+.button {
+    color: rgb(255, 255, 255);
+    background: rgb(64, 64, 64); 
+    border: 2px solid rgb(64, 64, 64);
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: auto;
+    display: block;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    width: 90px;
+    text-align: center;
+}
+
+.button:hover, .button:active {
+    color: rgb(255, 255, 255);
+    background: rgba(215, 214, 192,0.2);
+}
+
+
+#homebody svg {
+    width: 30%;
+    height: 30%;
+    fill: rgb(255, 255, 255); /* white */
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+#searchtwo {
+    text-align: center;
+}
+
+/* end home page styles */
+
+/*----------------- listing detail page styles --------------------*/
+
+
+#listingdeets main {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2.5%;
+}
+
+.eventimg {
+    width: 100%;
+    margin: 5% 0 2.5% 0;
+}
+
+#listinginfo {
+    background: rgba(255, 255, 255, 0.5);  /* white */
+    margin: 0 auto;
+    padding: 5% 5% 30% 5%;
+}
+
+#listingdeets h1 { /* listing title */
+    font-family: Comfortaa, 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0 0 5% 0;
+}
+
+#listingdeets h2 { /* date time*/
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.7em;
+    margin: 0 0 5% 0;
+    font-weight: 600;
+}
+
+.address {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0 0 5% 0;
+}
+
+#listingdeets h3 { /* organiser name */
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    margin: 0 0 5% 0;
+    font-weight: 600;
+}
+
+#listingdeets h4 {  /* description */
+    font-family: Comfortaa, 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 700; 
+    margin: 0 0 5% 0;
+}
+
+#listingdeets p {
+    margin: 0 0 5% 0;
+}
+
+#pay {
+    float: right;
+}
+
+#quantity {
+    margin: 0 0 20% 0;
+}
+
+#quantity label {
+    font-family: Comfortaa, 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 1.1em;
+    display: inline;
+}  
+
+/* ------- MEDIA QUERIES ------- */
+
+/* this MQ reduces the space at the bottom of the content */
+@media screen and (min-width: 600px) { 
+    #listinginfo {
+        background: rgba(255, 255, 255, 0.5);  /* white */
+        margin: 0 auto;
+        padding: 5% 5% 20% 5%;
+    }
+} /* end MQ */
+
+/* centers search box in header */
+@media screen and (min-width: 700px ) {
+    #search {
+        position: relative;
+        left: 40%;
+    }
+    
+    #homebody svg {
+        height: 25%;
+        width: 25%;
+    }
+}  /* end MQ */
+
+
+@media screen and (min-width: 900px) {
+    .eventimg {
+        float: right;
+        width: 50%;
+        margin: 5% 2.5% 0 2.5%;
+    }
+    
+    #details {
+        width: 48%;
+    }
+} /* end MQ */
+
+/*  moves search box right */
+@media screen and (min-width: 924px ) {
+    #search {
+        position: relative; 
+        left: 0;
+        padding: 0 2% 0 0;
+    }
+    
+    #homebody svg {
+        height: 20%;
+        width: 20%;
+    }
+    
+    #middle {
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        -webkit-flex-direction: row; /* Safari */
+        flex-direction:         row;
+        -webkit-flex-wrap: wrap; /* Safari */
+        flex-wrap:         wrap;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        /*align-items: center;   centers items vertically */
+    }
+    
+    #customers, #vendors {
+        width: 50%;
+    }
+    
+    #vendors {
+        background: rgba(255, 255, 255, 0.5);  /* white */
+        margin: 5% 0 0 0;
+    }
+}  /* end MQ */
+
+/* end listing detail page styles */ 
