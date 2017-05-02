@@ -75,6 +75,11 @@ h2 {
     font-size: 1.7em;
 }
 
+h3 {
+    font-family: Comfortaa, 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 1.5em;
+}
+
 p {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 1.2em;
@@ -96,11 +101,12 @@ footer {
 	right: 0;
 	bottom: 0;
 	left: 0;
-    height: 10%;
+    min-height: 5%;
     width: 100%;
     margin: 5% 0 0 0;
     position: absolute;
     padding: 1rem;
+    display: inline-block;
 } 
 
 
@@ -291,7 +297,6 @@ header label:focus {
     background: rgba(215, 214, 192,0.2);
 }
 
-
 .homesvg {
     width: 30%;
     height: 30%;
@@ -299,6 +304,36 @@ header label:focus {
     display: block;
     margin: auto;
     position: relative;
+}
+
+/* popular events section */
+#popular div {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);  /* white */
+    padding: 5% 0 0 0;
+}
+
+#popular img {
+    width: 90%;
+    height: auto; 
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+
+#homebody h1:nth-of-type(4) {
+    text-align: center;
+}
+
+#popular h3, #popular p {
+    padding: 0 0 0 5%;
+}
+
+#popular p {
+    font-weight: 600;
 }
 
 #searchtwo {
@@ -407,6 +442,23 @@ header label:focus {
         height: 25%;
         width: 25%;
     }
+    
+    #popular {
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        -webkit-flex-direction: row; /* Safari */
+        flex-direction:         row;
+        -webkit-flex-wrap: wrap; /* Safari */
+        flex-wrap:         wrap;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        /*align-items: center;   centers items vertically */ 
+    }
+    
+    #popular div {
+        width: 30%;
+    }
+    
 }  /* end MQ */
 
 
