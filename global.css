@@ -39,6 +39,7 @@ Background - Miaka
     background: linear-gradient(to right, #0ABFBC, #FC354C);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
 
 */
+
 /* Google fonts import */
 @import url(http://fonts.googleapis.com/css?family=Comfortaa:300,400,700%7COpen+Sans:400,400i,600,600i,700,700i,800,800i);
 
@@ -241,6 +242,13 @@ header label:focus {
     width: 100%;
 }
 
+.logo {
+    height: 75px; 
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
 #customers {
     background: rgba(64, 64, 64, 0.85); 
     padding: 2.5%;
@@ -284,7 +292,7 @@ header label:focus {
 }
 
 
-#homebody svg {
+.homesvg {
     width: 30%;
     height: 30%;
     fill: rgb(255, 255, 255); /* white */
@@ -374,7 +382,7 @@ header label:focus {
 
 /* ------- MEDIA QUERIES ------- */
 
-/* this MQ reduces the space at the bottom of the content */
+/* reduces the space at the bottom of the content */
 @media screen and (min-width: 600px) { 
     #listinginfo {
         background: rgba(255, 255, 255, 0.5);  /* white */
@@ -390,7 +398,12 @@ header label:focus {
         left: 40%;
     }
     
-    #homebody svg {
+    .logo {
+        float: left;
+        margin: 0 0 0 2.5%;
+    }
+    
+    .homesvg {
         height: 25%;
         width: 25%;
     }
@@ -417,7 +430,7 @@ header label:focus {
         padding: 0 2% 0 0;
     }
     
-    #homebody svg {
+    .homesvg {
         height: 20%;
         width: 20%;
     }
