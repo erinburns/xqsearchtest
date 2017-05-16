@@ -9,6 +9,9 @@
        
         <!-- responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- firebase initialization script -->
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 
     </head>
     
@@ -19,7 +22,7 @@
             <input id="nav-toggle" type="checkbox" class="hidden" />
             
             <!-- put logo here -->
-<svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<a href="index.html"><svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 661.8 495" style="enable-background:new 0 0 661.8 495;" xml:space="preserve">
 <style type="text/css">
 	.st0{opacity:0.88;fill:#12BBB8;}
@@ -45,16 +48,16 @@
 			c0-43.1-34.9-78-78-78c-43.1,0-78,34.9-78,78v163.9c0.1,43.1,35,78,78,78C480.4,404.6,486.5,403.9,492.5,402.4z"/>
 	</g>
 </g>
-</svg>  <!-- end logo SVG -->
+            </svg></a>  <!-- end logo SVG -->
             
             <!-- start nav -->
             <nav>
 				<ul>  <!-- menu items -->
 					<li class="current"> <a href="index.html">Home</a> </li> <!-- logo could be home icon -->
                     <li> <a href="#">How it works</a> </li>
-                    <li> <a href="#">Sign up</a> </li>
-                    <li> <a href="#">Log in</a> </li>
-                    <li> <a href="listing-detail.html">Listing Detail</a> </li>
+                    <li> <a href="signup.html">Sign up</a> </li>
+                    <li> <a href="login.html">Log in</a> </li>
+                    <li> <a href="listing-detail.html">Sample Listing</a> </li>
 				</ul> 
                 <div id="logo"> <!-- put logo here --> </div> 
                 <form id="search" method="get"> 
@@ -72,7 +75,7 @@
                 <a class="button" href="#"> Join </a>
             </section>
             
-            <div id="middle"> <!-- flex -->
+            <div id="middle"> <!-- flex container -->
                 <section id="customers"> <!-- search -->
                     <h1> Customers </h1>
                     <!-- search icon -->

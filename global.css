@@ -52,6 +52,10 @@ html {
   box-sizing: inherit;
 }
 
+.hide {
+    display: none;
+}
+
 body {
     min-height: 100%;
     background: #FC354C;  /* fallback for old browsers */
@@ -280,8 +284,22 @@ header label:focus {
     text-align: center; 
 }
 
-
 .button {
+    color: rgb(255, 255, 255);
+    background: rgb(64, 64, 64); 
+    border: 2px solid rgb(64, 64, 64);
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: 2%;
+    display: block;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    width: 90px;
+    text-align: center;
+}
+
+#homebody .button {
     color: rgb(255, 255, 255);
     background: rgb(64, 64, 64); 
     border: 2px solid rgb(64, 64, 64);
