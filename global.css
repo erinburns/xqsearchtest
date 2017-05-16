@@ -261,6 +261,10 @@ header label:focus {
     margin: 5% 0 0 0;
 }
 
+.intro {
+    margin-left: 2.5%;
+}
+
 #customers h1, #customers h2 {
     color: rgb(255, 255, 255);
     text-align: center; 
@@ -324,9 +328,7 @@ header label:focus {
     display: block;
 }
 
-#homebody h1:nth-of-type(4) {
-    text-align: center;
-}
+#homebody 
 
 #popular h3, #popular p {
     padding: 0 0 0 5%;
