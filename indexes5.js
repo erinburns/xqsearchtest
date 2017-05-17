@@ -40,12 +40,19 @@
         var email = txtEmail.value;
         var pass = txtPassword.value;
         var auth = firebase.auth();
+        var user = firebase.auth().currentUser;
+        
         // sign in 
         var promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(function (e) {
             return console.log(e.message);
-        });
-    });
+        }).then(function(){user.sendEmailVerification().then(function() {
+          // Email sent.
+        }, function(error) {
+          // An error happened.
+        })
+                          }); // end verification
+    }); // end sign up button event listener
 
     // show logout button when user is logged in
     // TODO: make sure the login form clears the credentials on logout

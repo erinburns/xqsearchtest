@@ -13,8 +13,9 @@
         <!-- firebase initialization script -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         
-        <!-- sitewide js -->
-        <script src="index.js"></script>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     </head>
     
     <body id="signupbody">
@@ -74,19 +75,19 @@
             <h1> Log in</h1>
             
             <!-- begin sign up form -->
-            <div class="signupform">
+            <div class="signinform" id="loginform">
                 <input id="txtEmail" type="email" placeholder="Email">
 
                 <input id="txtPassword" type="password" placeholder="Password">
 
-                <a id="btnLogin" class="loginbtn button hide"> Log in
-                </a>
-
-                <a id="btnLogout" class="logoutbtn button hide"> Log out
-                </a>
+                <button id="btnLogin" class="loginbtn hide"> Log in </button>
                 
-                <p> Don't have an account? <a href="signup.html" id="btnSignUp" class="signupbtn button hide">Sign Up
-                </a></p>
+                <button id="resetpwd" class="pwdreset hide"> Forgot password </button>
+
+                <button id="btnLogout" class="logoutbtn hide"> Log out </button>
+                
+                <p> Don't have an account? <a href="signup.html"><button id="btnSignUp" class="signupbtn hide">Sign Up
+            </button></a> </p>
                 
             </div>
             
@@ -96,5 +97,8 @@
             
         </footer>
         
+        <!-- script files -->
+        <script src="indexes5.js"></script>
+        <!-- <script src="index.js"></script> ES6 not working on Safari 8 -->
     </body>
 </html>
