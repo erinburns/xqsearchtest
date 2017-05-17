@@ -40,19 +40,12 @@
         var email = txtEmail.value;
         var pass = txtPassword.value;
         var auth = firebase.auth();
-        var user = firebase.auth().currentUser;
-        
         // sign in 
         var promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(function (e) {
             return console.log(e.message);
-        }).then(function(){user.sendEmailVerification().then(function() {
-          // Email sent.
-        }, function(error) {
-          // An error happened.
-        })
-                          }); // end verification
-    }); // end sign up button event listener
+        });
+    });
 
     // show logout button when user is logged in
     // TODO: make sure the login form clears the credentials on logout
@@ -60,25 +53,18 @@
         firebase.auth().signOut();
     });
 
-    // realtime authentication listener. no console errors but buttons not appearing
+    // realtime authentication listener
     firebase.auth().onAuthStateChanged(function (firebaseUser) {
         if (firebaseUser) {
             console.log(firebaseUser);
             btnLogout.classList.remove('hide');
             btnSignUp.classList.add('hide');
             btnLogin.classList.add('hide');
-            }
-        if (firebaseUser) {
-          firebaseUser.sendEmailVerification().then(function() {
-            // Email sent.
-          }, function(error) {
-            // An error happened.
-          });
         } else {
-	       console.log('not logged in');
+            console.log('not logged in');
             btnLogout.classList.add('hide');
             btnSignUp.classList.remove('hide');
-            btnLogin.classList.remove('hide');        
-	   } // else
-    })(); 
-})(); // end Js wrapper
+            btnLogin.classList.remove('hide');
+        } // end if statement
+    }); // end function
+})();
