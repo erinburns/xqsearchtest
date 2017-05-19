@@ -1,3 +1,31 @@
+indexes5.js
+DETAILS
+ACTIVITY
+indexes5.js
+Sharing Info
+Not shared
+General Info
+Type
+Javascript
+Size
+3 KB (2,769 bytes)
+Storage used
+3 KB (2,769 bytes)
+Location
+prototype
+Owner
+me
+Modified
+May 18, 2017 by me
+Opened
+2:23 PM by me
+Created
+May 18, 2017 with Google Drive Web
+Description
+Email verification works in this version
+Download permissions
+Viewers can download
+
 "use strict";
 
 (function () {
@@ -20,7 +48,7 @@
     var btnSignUp = document.getElementById('btnSignUp');
     var btnLogout = document.getElementById('btnLogout');
 
-    // add login event
+    // login event
     btnLogin.addEventListener('click', function (e) {
         // get email and pass
         var email = txtEmail.value;
@@ -40,12 +68,18 @@
         var email = txtEmail.value;
         var pass = txtPassword.value;
         var auth = firebase.auth();
-        // sign in 
+        var user = firebase.auth().currentUser;
+
+        // create user and sign in 
         var promise = auth.createUserWithEmailAndPassword(email, pass);
-        promise.catch(function (e) {
-            return console.log(e.message);
-        });
-    });
+        promise.then(function(user) { // see stackoverflow reply http://bit.ly/2qAkd2x
+          user.sendEmailVerification().then(function() {
+            // Email sent.
+            }, function(error) {
+              // An error happened.
+            });
+        });  // end promise
+    }); // end sign up button event listener
 
     // show logout button when user is logged in
     // TODO: make sure the login form clears the credentials on logout
@@ -65,6 +99,6 @@
             btnLogout.classList.add('hide');
             btnSignUp.classList.remove('hide');
             btnLogin.classList.remove('hide');
-        } // end if statement
+        } // end else statement
     }); // end function
 })();
