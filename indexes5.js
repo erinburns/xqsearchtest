@@ -1,3 +1,5 @@
+// Js code for authentication on signup, sign in pages
+
 "use strict";
 
 (function () {
@@ -73,4 +75,4 @@
             btnLogin.classList.remove('hide');
         } // end else statement
     }); // end function
-})();
+})(); // end file wrapper
