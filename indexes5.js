@@ -1,31 +1,3 @@
-indexes5.js
-DETAILS
-ACTIVITY
-indexes5.js
-Sharing Info
-Not shared
-General Info
-Type
-Javascript
-Size
-3 KB (2,769 bytes)
-Storage used
-3 KB (2,769 bytes)
-Location
-prototype
-Owner
-me
-Modified
-May 18, 2017 by me
-Opened
-2:23 PM by me
-Created
-May 18, 2017 with Google Drive Web
-Description
-Email verification works in this version
-Download permissions
-Viewers can download
-
 "use strict";
 
 (function () {
