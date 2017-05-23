@@ -15,11 +15,10 @@
         
         <!-- jQuery -->
          <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-
-
+        
     </head>
     
-    <body id="addlisting">
+    <body id="browsepage">
         <header>
             <!-- begin hamburger menu -->
             <label class="hamburger" for="nav-toggle"></label> 
@@ -73,52 +72,25 @@
         </header>
         
         <main>
-            <!-- begin listing form -->
-            <form id="listingform">
-                <div>
-                    <label for="eventtitle">Title</label>
-                    <input id="eventtitle" placeholder="Enter the title of your event">
-                </div>
-                
-                <div>
-                    <label for="desc">Description</label>
-                    <input id="desc" placeholder="Tell us more about your event">
-                </div>
-                
-                <div>
-                    <label for="starttime">Start Date and Time</label>
-                    <input id="starttime" type="datetime-local">
-                </div>
-                
-                <div>
-                    <label for="endtime">End Date and Time</label>
-                    <input id="endtime" type="datetime-local">
-                </div>
-                
-                <div>
-                    <label for="city">City</label>
-                    <input id="city" type="text">
-                </div>
-                
-                <div>
-                    <label for="county">County</label>
-                    <input id="county" type="text">
-                </div>
-                
-                <div>
-                    <label for="postcode">Post Code</label>
-                    <input id="postcode" type="text">
-                </div>
-                
-                <div>
-                    <label for="price">Price</label>
-                    <input id="price" type="number" min="1" step="any">
-                </div>
-                
-                <button id="submitevent" type="submit">List it!
-                </button>
-
-            </form>
+            
+            <table id="browse">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr> <!-- listings populate here -->
+                    <td id="browsetitle"></td>
+                    <td id="browsecity"></td> <!-- location -->
+                    <td id="browsedate"></td>
+                    <td id="browseprice"></td>
+                  </tr>
+                </tbody>
+            </table>
             
         </main>
         
