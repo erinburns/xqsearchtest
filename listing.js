@@ -46,6 +46,7 @@ var submitEvent = function () {
         event = childSnapshot.val(); // note there is no 's' at end of this event
         
         // Display the event data in HTML
+        // items on left are IDs from HTML items on right are db labels
         $("#browsetitle").html(event.title)
         $("#browsecity").html(event.city)
         $("#browsedate").html(event.starttime)
