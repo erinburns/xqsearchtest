@@ -336,6 +336,7 @@ header label:focus {
     position: relative;
     background: rgba(255, 255, 255, 0.5);  /* white */
     padding: 5% 0 0 0;
+    margin: 2.5%;
 }
 
 #popular img {
@@ -344,9 +345,8 @@ header label:focus {
     margin: 0 auto;
     position: relative;
     display: block;
-}
-
-#homebody 
+    padding: 0 0 2.5% 0;
+} 
 
 #popular h3, #popular p {
     padding: 0 0 0 5%;
@@ -434,6 +434,35 @@ header label:focus {
     font-size: 1.1em;
     display: inline;
 }  
+/* end listing detail page styles */ 
+
+/* ------- browse.html ------- */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);  /* white */
+    padding: 5% 0 0 0;
+    margin: 2.5%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* .card img {
+    width: 90%;
+    height: auto; 
+    margin: 0 auto;
+    position: relative;
+    display: block;
+} */
+
+/* end browse.html */
 
 /* ------- MEDIA QUERIES ------- */
 
@@ -444,6 +473,29 @@ header label:focus {
         margin: 0 auto;
         padding: 5% 5% 20% 5%;
     }
+    
+    #popular {
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        -webkit-flex-direction: row; /* Safari */
+        flex-direction:         row;
+        -webkit-flex-wrap: wrap; /* Safari */
+        flex-wrap:         wrap;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        /*align-items: center;   centers items vertically */ 
+    }
+    
+    #popular div {
+        width: 27.5%;
+        margin: 2.5%;
+    }
+    
+    .card {
+        width: 27.5%;
+        margin: 2.5%;
+    }
+    
 } /* end MQ */
 
 /* centers search box in header */
@@ -463,21 +515,7 @@ header label:focus {
         width: 25%;
     }
     
-    #popular {
-        display: -webkit-flex; /* Safari */
-        display: flex;
-        -webkit-flex-direction: row; /* Safari */
-        flex-direction:         row;
-        -webkit-flex-wrap: wrap; /* Safari */
-        flex-wrap:         wrap;
-        -webkit-justify-content: space-around;
-        justify-content: space-around;
-        /*align-items: center;   centers items vertically */ 
-    }
-    
-    #popular div {
-        width: 30%;
-    }
+    /* removed popular events index.html MQ */
     
 }  /* end MQ */
 
@@ -529,4 +567,3 @@ header label:focus {
     }
 }  /* end MQ */
 
-/* end listing detail page styles */ 
