@@ -38,25 +38,40 @@ var submitEvent = function () {
         });
     };  // end submitEvent function
     
+    var dbsearch = function () {
     
-    // displays event listings on browse.html
-    events.limitToLast(1).on('child_added', function(childSnapshot) {
-        
-        // retrieves data from db
-        event = childSnapshot.val(); // note there is no 's' at end of this event
-        
-        // Display the event data in HTML
-        // items on left are IDs from HTML items on right are db labels
-        $("#browsetitle").html(event.title)
-        $("#browsecity").html(event.city)
-        $("#browsedate").html(event.starttime)
-        $("#browseprice").html(event.price)
-        
-        // TODO: find out how to link to the listing details from db ID
-        // Make the link actually work and direct to the URL provided
-        // $("#link").attr("href", event.link) 
-    });
+        // displays event listings on browse.html
+        events.limitToLast(1).on('child_added', function(childSnapshot) { 
 
+            // retrieves data from db
+            evento = childSnapshot.val(); // note there is no 's' at end of this event
+
+            // Display the event data in HTML
+            // items on left are IDs from HTML items on right are db labels
+          /*  $("#browsetitle").html(evento.title)
+            $("#browsecity").html(evento.city)
+            $("#browsedate").html(evento.starttime)
+            $("#browseprice").html(evento.price) */
+
+            // TODO: find out how to link to the listing details from db ID
+            // Make the link actually work and direct to the URL provided
+            // $("#link").attr("href", event.link) 
+        }); 
+
+        // search box 
+        
+        
+       events.limitToLast(1).on('child_added', function(childSnapshot) {
+           // retrieves data from db
+            evento = childSnapshot.val();
+           document.getElementById('searchnav').addEventListener('input', function() {
+            if (searchnav.value === "l") {
+                console.log(evento);
+                }
+            });
+        });
+    };
+    dbsearch(); // calling
     
     $(window).load(function () {
 
