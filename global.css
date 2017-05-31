@@ -454,6 +454,15 @@ header label:focus {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+/* styling for autosuggest ui*/
+.searchUI {
+ display:  block;
+    position: absolute;
+    background: #fff;
+    padding: 4px 40px 10px 4px;
+	cursor : pointer;
+   }
+
 /* .card img {
     width: 90%;
     height: auto; 
