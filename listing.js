@@ -46,23 +46,23 @@ var submitEvent = function () {
     };  // end submitEvent function
     
     
-        // displays event listings on browse.html
-   events.on('value', function(snapshot) {  // 3/6/17 removed on child_added changed to value, changed childsnapshot to snapshot
-        
-         // db reference - retrieves data from db on any change to the object
-         var event = snapshot.val(); // note there is no 's' at end of this event. changed childsnapshot to snapshot
-        
-        // Display the event data in HTML
+        // displays event listings on browse.html - modified 3/6/17
+  events.on('value', function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+        var eventkey = childSnapshot.key;
+        var eventdata = childSnapshot.val();
+            
         var card = document.createElement('div');
         card.setAttribute('class', 'card');
         document.body.appendChild(card);
        
         var cardtitle = document.createElement('p');
-        cardtitle.innerText = JSON.stringify(event);
+        cardtitle.innerHTML = JSON.stringify(eventdata);
         card.appendChild(cardtitle);  
         
        console.log(event);
-    }); // end of function
+  });
+});
 
         // search box 
         
