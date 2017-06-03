@@ -46,28 +46,28 @@ var submitEvent = function () {
     };  // end submitEvent function
     
     
-        // displays event listings on browse.html
-        events.limitToLast(1).on('child_added', function(childSnapshot) { 
-
-            // retrieves data from db
-            event = childSnapshot.val(); // note there is no 's' at end of this event
-
-            // Display the event data in HTML
-            // items on left are IDs from HTML items on right are db labels
-           $("#browsetitle").html(event.title)
-            $("#browsecity").html(event.city)
-            $("#browsedate").html(event.starttime)
-            $("#browseprice").html(event.price) 
-
-            // TODO: find out how to link to the listing details from db ID
-            // Make the link actually work and direct to the URL provided
-            // $("#link").attr("href", event.link) 
-        }); 
+        // displays event listings on browse.html - modified 3/6/17
+  events.on('value', function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+        var eventkey = childSnapshot.key;
+        var eventdata = childSnapshot.val();
+            
+        var card = document.createElement('div');
+        card.setAttribute('class', 'card');
+        document.body.appendChild(card);
+       
+        var cardtitle = document.createElement('p');
+        cardtitle.innerHTML = JSON.stringify(eventdata);
+        card.appendChild(cardtitle);  
+        
+       console.log(event);
+  });
+});
 
         // search box 
         
         
-       events.limitToLast(1).on('child_added', function(childSnapshot) {
+       events.on('value', function(childSnapshot) {  // removed limit to last(1) and on(child_added) as that will only return 1 object and or inconsisent results
            // retrieves data from db
             event = childSnapshot.val();
            searchnav.addEventListener('input', function() {
