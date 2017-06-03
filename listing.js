@@ -10,7 +10,7 @@
 	 i = 0;
 	
     // initialize firebase
-    const config = {
+    var config = {
             apiKey: "AIzaSyC1PKNs7ifneJGXEib55zvkMHc93JD4r4E",
             authDomain: "authtest-54513.firebaseapp.com",
             databaseURL: "https://authtest-54513.firebaseio.com",
