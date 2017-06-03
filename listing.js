@@ -47,22 +47,22 @@ var submitEvent = function () {
     
     
         // displays event listings on browse.html
-        events.limitToLast(1).on('child_added', function(childSnapshot) { 
-
-            // retrieves data from db
-            event = childSnapshot.val(); // note there is no 's' at end of this event
-
-            // Display the event data in HTML
-            // items on left are IDs from HTML items on right are db labels
-           $("#browsetitle").html(event.title)
-            $("#browsecity").html(event.city)
-            $("#browsedate").html(event.starttime)
-            $("#browseprice").html(event.price) 
-
-            // TODO: find out how to link to the listing details from db ID
-            // Make the link actually work and direct to the URL provided
-            // $("#link").attr("href", event.link) 
-        }); 
+  events.on('value', function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+        var eventkey = childSnapshot.key;
+        var eventdata = childSnapshot.val();
+            
+        var card = document.createElement('div');
+        card.setAttribute('class', 'card');
+        document.body.appendChild(card);
+       
+        var cardtitle = document.createElement('p');
+        cardtitle.innerHTML = JSON.stringify(eventdata);
+        card.appendChild(cardtitle);  
+        
+       console.log(event);
+  });
+});
 
         // search box 
         
